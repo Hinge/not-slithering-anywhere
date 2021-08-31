@@ -111,8 +111,7 @@ def posts_backup_verify():
             return render_template('upload.html',
                                    message="upload verified successfully")
         except Exception as e:
-            return e.args[-1]('upload.html',
-                                   message=e)
+            return redirect('fb_login')
     else:
         return render_template('upload.html')
 
