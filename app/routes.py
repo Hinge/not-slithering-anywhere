@@ -111,7 +111,7 @@ def posts_backup_verify():
             return render_template('upload.html',
                                    message="upload verified successfully")
         except Exception as e:
-            return render_template('upload.html',
+            return e.args[-1]('upload.html',
                                    message=e)
     else:
         return render_template('upload.html')
